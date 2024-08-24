@@ -1,7 +1,9 @@
 import express, { Express, Request, Response } from "express";
+import env from "dotenv" 
+env.config();
 
 const app: Express = express();
-const port: number = 3000;
+const port: (number | string) = `${process.env.PORT}` || 3000;
 
 app.set("views", "./views");
 app.set("view engine", "pug");
