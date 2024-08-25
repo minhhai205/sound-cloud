@@ -52,3 +52,55 @@
   color: green;
 }
 /* End box-head */
+
+.item {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.item:hover {
+  transform: scale(1.05);
+}
+
+.inner-image {
+  position: relative;
+}
+
+.inner-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.inner-content {
+  padding: 15px;
+}
+
+.card-body {
+  margin-bottom: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  margin: 0;
+  font-weight: bold;
+  color: #333;
+}
+
+.card-text {
+  font-size: 0.875rem;
+  color: #666;
+  margin-top: 5px;
+}
