@@ -9,20 +9,12 @@ block main
 
         .row
           each item in playlists
-            //- .col-3.mb-3
-            //-   div(class="card")
-            //-     img(src=item.avatar alt=item.title)
-            //-     div(class="card-body")
-            //-       a(href=`/songs/${item.slug}`)
-            //-         h5(class="card-title") #{item.title}
-            //-       p(class="card-text") #{item.description}
-
             .col-3.mb-3
               .item
                 .inner-image
-                  a(href=`/products/detail/${item.slug}`)
+                  a(href=`/playlists/${item.slug}`)
                     img(src=item.avatar alt=item.title)
                 .inner-content
-                  a(href=`/songs/${item.slug}`)
+                  a(href=`/playlists/${item.slug}`)
                     h5(class="card-title") #{item.title}
                   p(class="card-text") #{item.description} 
