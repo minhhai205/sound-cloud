@@ -104,3 +104,108 @@ a:hover {
   color: #666;
   margin-top: 5px;
 }
+
+/* List item styling */
+.d-flex.justify-content-between.align-items-center.border-bottom.px-3.py-2 {
+  padding: 8px 16px;
+  border-bottom: 1px solid #e1e1e1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Track image styling */
+.rounded-circle.bg-light {
+  width: 30px;
+  height: 30px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+}
+
+/* Button styling */
+.btn-sm {
+  padding: 2px 6px; /* Smaller padding for compact size */
+  font-size: 12px; /* Smaller font size */
+  margin: 0 5px; /* Adds spacing between buttons */
+}
+
+/* Adjust margin for the first button to remove extra space on the left */
+.btn-group .btn:first-child {
+  margin-left: 0;
+}
+
+/* Adjust margin for the last button to remove extra space on the right */
+.btn-group .btn:last-child {
+  margin-right: 0;
+}
+
+/* Badge styling */
+.badge {
+  font-size: 12px;
+  padding: 4px 8px;
+}
+
+/* Text link styling */
+.text-secondary, .text-primary {
+  font-size: 15px;
+  text-decoration: none;
+  margin-right: 5px;
+}
+
+.text-secondary:hover, .text-primary:hover {
+  text-decoration: underline;
+}
+
+/* Remove background and border from 'More' button */
+.btn-outline-secondary[title="More"] {
+  background-color: transparent;
+  border: none;
+}
+
+/* Hover effect for buttons */
+.btn:hover {
+  background-color: #f0f0f0;
+}
+
+/* Specific styling for list item contents */
+li.d-flex.justify-content-between.align-items-center.border-bottom.px-3.py-2 {
+  padding: 8px 16px;
+  border-bottom: 1px solid #e1e1e1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Space between the track image and the play button */
+.d-flex.align-items-center .me-3 {
+  margin-right: 10px; /* Adjust as needed */
+  margin-left: 10px;
+}
+
+/* Space between the play button and the title */
+.d-flex.align-items-center .me-2 {
+  margin-right: 10px; /* Adjust as needed */
+}
+
+/* Space between the title and the right section (badge and buttons) */
+.me-auto {
+  margin-right: 10px; /* Adjust as needed */
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .d-flex.justify-content-between.align-items-center.border-bottom.px-3.py-2 {
+    padding: 8px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .badge, .text-secondary, .text-primary {
+    font-size: 12px; /* Smaller font size for mobile */
+  }
+
+  .btn-group {
+    margin-top: 8px;
+  }
+}
