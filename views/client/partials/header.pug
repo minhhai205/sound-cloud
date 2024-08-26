@@ -16,3 +16,24 @@ header.header
           ul
             li
               a(href="/feed") Feed
+
+      .box-search
+        form(
+          action="/search/result"
+          method="GET"
+        )
+          .form-group.d-flex.mb-0
+            input(
+              type="text"
+              placeholder="Nhập từ khóa..."
+              class="form-control"
+              name="keyword"
+              value=keyword
+            )
+            button(
+              type="submit"
+              class="btn btn-primary"
+              aria-label="Search"
+            )
+              i(class="fa fa-search") 
+
