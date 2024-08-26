@@ -8,7 +8,7 @@ block main
           each item, index in listSongs
             li.d-flex.justify-content-between.align-items-center.border-bottom.px-3.py-2
               
-              .d-flex.align-items-center.justify-content-end.justify-content-start
+              .d-flex.align-items-center.justify-content-start
                 span #{index + 1}
                 .d-flex.align-items-center
                   .me-3
@@ -17,7 +17,7 @@ block main
                     button.btn.btn-outline-secondary.btn-sm(tabindex="0", title="Play") Play
                 .me-auto
                   .d-flex.align-items-center
-                    a.text-secondary.me-1(href="#") #{item.title}
+                    a.text-secondary.me-1(href=`/songs/detail/${item.slug}`) #{item.title}
               .d-flex.align-items-center.justify-content-end
                 span.badge.bg-secondary.text-light.me-3 4,131
                 .btn-group
