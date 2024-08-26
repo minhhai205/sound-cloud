@@ -24,8 +24,11 @@ block main
             .inner-avatar
               img(src=song.avatar)
             .inner-audio
-              audio(controls)
-                source(src=song.audio)
+              div(
+                id="aplayer" 
+                data-song=song
+                data-singer=singer
+              )
 
           .inner-desc
             .inner-label Description
