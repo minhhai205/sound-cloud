@@ -4,4 +4,6 @@ const router: Router = express.Router();
 
 router.get("/detail/:slugSong", controller.detail);
 
+router.patch("/like/:type/:id", controller.like);
+
 export const songRoutes: Router = router;

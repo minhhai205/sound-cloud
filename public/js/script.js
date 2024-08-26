@@ -15,3 +15,28 @@ if(aplayer){
   });
 }
 // End Aplayer
+
+// Button Like
+const buttonLike = document.querySelector("[button-like]");
+//console.log(buttonLike)
+if(buttonLike){
+  buttonLike.addEventListener("click", () => {
+    const id = buttonLike.getAttribute("button-like");
+    
+    const type = buttonLike.classList.contains("active") ? "dislike" : "like";
+
+    fetch(`/songs/like/${type}/${id}`,{
+      method: "PATCH"
+    })
+      .then(res => res.json())
+      .then(data => {
+        if(data.code == 200) {
+          const elementNumber = buttonLike.querySelector(".inner-number");
+          elementNumber.innerHTML = data.like;
+          buttonLike.classList.toggle("active");
+        }
+       
+      })
+  });
+}
+// End Button Like
