@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import Song from "../../models/song.model";
 import unidecode from "unidecode";
+import { searchOption } from "../../helpers/searchOption.helper"
 
 // [GET] /search
 export const result = async (req: Request, res: Response): Promise<void> => {
@@ -12,6 +13,7 @@ export const result = async (req: Request, res: Response): Promise<void> => {
   const keywordSlug = unidecodeText.replace(/\s+/g, "-");
   const keyWordSlugRegex = new RegExp(keywordSlug, "i");
   
+  const dataSearchOption = searchOption("");
 
   const listSongs = await Song.find({
     $or: [
@@ -26,6 +28,7 @@ export const result = async (req: Request, res: Response): Promise<void> => {
     pageTitle: keyword,
     listSongs: listSongs,
     keyword: keyword,
+    dataSearchOption: dataSearchOption,
   });
 }
 
@@ -39,7 +42,7 @@ export const songs = async (req: Request, res: Response): Promise<void> => {
     const keywordSlug = unidecodeText.replace(/\s+/g, "-");
     const keyWordSlugRegex = new RegExp(keywordSlug, "i");
     
-
+    const dataSearchOption = searchOption("songs");
     try {
       const listSongs = await Song.find({
         $or: [
@@ -54,6 +57,7 @@ export const songs = async (req: Request, res: Response): Promise<void> => {
         pageTitle: keyword,
         listSongs: listSongs,
         keyword: keyword,
+        dataSearchOption: dataSearchOption,
       });
     } catch (error) {
       res.render("client/pages/search/index", {
