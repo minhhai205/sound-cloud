@@ -112,3 +112,44 @@ export const playlists = async (req: Request, res: Response): Promise<void> => {
     });
   }
 }
+
+// [GET] /search/people
+export const people = async (req: Request, res: Response): Promise<void> => {
+  if(req.query.keyword){
+    const keyword =  `${req.query.keyword}`;
+    
+    const dataSearchOption = searchOption("people");
+
+    res.render("client/pages/search/people", {
+      pageTitle: keyword,
+      keyword: keyword,
+      dataSearchOption: dataSearchOption,
+    });
+  }
+  else {
+    res.render("client/pages/search/index", {
+      pageTitle: "Search",
+    });
+  }
+}
+
+// [GET] /search/albums
+export const albums = async (req: Request, res: Response): Promise<void> => {
+  if(req.query.keyword){
+    const keyword =  `${req.query.keyword}`;
+    
+    const dataSearchOption = searchOption("albums");
+
+    res.render("client/pages/search/album", {
+      pageTitle: keyword,
+      keyword: keyword,
+      dataSearchOption: dataSearchOption,
+    });
+  }
+  else {
+    res.render("client/pages/search/index", {
+      pageTitle: "Search",
+    });
+  }
+}
+

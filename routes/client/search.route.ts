@@ -8,4 +8,8 @@ router.get("/songs", controller.songs);
 
 router.get("/playlists", controller.playlists);
 
+router.get("/people", controller.people);
+
+router.get("/albums", controller.albums);
+
 export const searchRoutes: Router = router;
