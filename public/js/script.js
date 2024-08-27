@@ -40,3 +40,28 @@ if(buttonLike){
   });
 }
 // End Button Like
+
+// Option Search
+const searchOption = document.querySelector("[button-search]");
+if(searchOption){
+  let url = new URL(window.location.href);
+
+  const buttonSelectons = searchOption.querySelectorAll("[data-name]");
+  
+  buttonSelectons.forEach(button => {
+    button.addEventListener("click", () => {
+      const option = button.getAttribute("data-name");
+
+      let href = "";
+      if(option){
+        href = url.origin + `/search/${option}/` + url.search;
+      }
+      else{
+        href = url.origin + `/search/` + url.search;
+      }
+
+      window.location.href = href;
+    });
+  });
+}
+// End Option Search

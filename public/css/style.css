@@ -376,3 +376,23 @@ li.d-flex.justify-content-between.align-items-center.border-bottom.px-3.py-2 {
   }
 }
 /* end box search */
+
+/* Button Styling */
+.sidebar-menu .btn {
+  border: none;
+  border-radius: 0;
+  padding: 10px 15px;
+  font-size: 16px; /* Larger font size for readability */
+  text-align: left; /* Align text to the left */
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  transition: background-color 0.2s, color 0.2s;
+  width: 100%; /* Full width button */
+}
+
+.sidebar-menu .btn.btn-light.active{
+  background-color: #e22525;
+  color:#fff;
+}

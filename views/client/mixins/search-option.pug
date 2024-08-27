@@ -1,0 +1,22 @@
+mixin search-option()
+  div.container.mt-3
+    .list-group.sidebar-menu(button-search)
+      button.btn.btn-light(type="button" data-name="")
+        i.fa.fa-search.mr-2
+        | Everything
+
+      button.btn.btn-light(type="button" data-name="songs")
+        i.fa.fa-music.mr-2
+        | Tracks
+
+      button.btn.btn-light(type="button" data-name="people")
+        i.fa.fa-user.mr-2
+        | People
+
+      button.btn.btn-light(type="button" data-name="albums")
+        i.fa.fa-list-alt.mr-2
+        | Albums
+
+      button.btn.btn-light(type="button" data-name="playlists")
+        i.fa.fa-list-alt.mr-2
+        | Playlists
