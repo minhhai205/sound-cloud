@@ -4,4 +4,6 @@ const router: Router = express.Router();
 
 router.get("/", controller.result);
 
+router.get("/songs", controller.songs);
+
 export const searchRoutes: Router = router;
