@@ -11,7 +11,8 @@ if(aplayer){
         artist: 'artist?',
         url: dataSong.audio,
         cover: dataSong.avatar,
-    }]
+    }],
+    autoplay: true
   });
 }
 // End Aplayer
