@@ -6,4 +6,6 @@ router.get("/", controller.result);
 
 router.get("/songs", controller.songs);
 
+router.get("/playlists", controller.playlists);
+
 export const searchRoutes: Router = router;
