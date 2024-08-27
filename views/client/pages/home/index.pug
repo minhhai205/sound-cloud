@@ -1,5 +1,6 @@
 extends ../../layouts/default.pug
 include ../../mixins/box-head.pug
+include ../../mixins/render-playlist.pug
 
 block main
   .container.my-3
@@ -8,13 +9,4 @@ block main
         +box-head("Playlist Music on SoundCloud")
 
         .row
-          each item in playlists
-            .col-3.mb-3
-              .item
-                .inner-image
-                  a(href=`/playlists/${item.slug}`)
-                    img(src=item.avatar alt=item.title)
-                .inner-content
-                  a(href=`/playlists/${item.slug}`)
-                    h5(class="card-title") #{item.title}
-                  p(class="card-text") #{item.description} 
+          +render-playlists(playlists)
