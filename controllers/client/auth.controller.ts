@@ -62,6 +62,7 @@ export const loginPost = async (req: Request, res: Response): Promise<void> => {
       // add Notification...
       console.log("email does not exist!");
       res.redirect("back");
+      return;
     }
 
     if(md5(password) != user.password) {
