@@ -1,22 +1,25 @@
 import mongoose from "mongoose";
 
-const userSchema = new mongoose.Schema(
-  {
-    fullName: String,
-    avatar: String,
-    status: String,
-    slug: String,
-    deleted: {
-      type: Boolean,
-      default: false,
-    },
-    deletedAt: Date,
+const userSchema = new mongoose.Schema({
+  fullName: String,
+  email: String,
+  password: String,
+  tokenUser: String,
+  phone: String,
+  avatar: String,
+  status: {
+    type: String,
+    default: "active"
   },
-  {
-    timestamps: true,
-  }
-);
+  deleted: {
+    type: Boolean,
+    default: false
+  },
+  deletedAt: Date
+}, {
+  timestamps: true 
+});
 
 const User = mongoose.model("User", userSchema, "users");
 
-export default User;
+export default userSchema;
