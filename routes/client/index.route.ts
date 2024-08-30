@@ -3,6 +3,7 @@ import { homeRoutes } from "./home.route";
 import { playlistRoutes } from "./playlist.route";
 import { songRoutes } from "./song.route";
 import { searchRoutes } from "./search.route";
+import { authRoutes } from "./auth.route";
 
 const route = (app: Express): void => {
   app.use("/", homeRoutes);
@@ -12,6 +13,8 @@ const route = (app: Express): void => {
   app.use("/songs", songRoutes);
 
   app.use("/search", searchRoutes);
+
+  app.use("/auth", authRoutes);
 
 }
 

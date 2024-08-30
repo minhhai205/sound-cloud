@@ -16,24 +16,32 @@ header.header
           ul
             li
               a(href="/feed") Feed
-
-      .box-search
-        form(
-          action="/search/"
-          method="GET"
-        )
-          .form-group.d-flex.mb-0
-            input(
-              type="text"
-              placeholder="Nhập từ khóa..."
-              class="form-control"
-              name="keyword"
-              value=keyword
-            )
-            button(
-              type="submit"
-              class="btn btn-primary"
-              aria-label="Search"
-            )
-              i(class="fa fa-search") 
-
+      
+      .col-4
+        .box-search
+          form(
+            action="/search"
+            method="GET"
+          )
+            .form-group.d-flex.mb-0
+              input(
+                type="text"
+                placeholder="Nhập từ khóa..."
+                class="form-control"
+                name="keyword"
+                value=keyword
+              )
+              button(
+                type="submit"
+                class="btn btn-primary"
+                aria-label="Search"
+              )
+                i(class="fa fa-search") 
+      
+      .col-3
+        .inner-menu
+          ul
+            li
+              a.btn.btn-success.btn-sm(href="/auth/login") Sign in
+            li
+              a.btn.btn-info.btn-sm(href="/auth/register") Create Account
