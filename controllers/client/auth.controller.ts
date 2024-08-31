@@ -88,3 +88,9 @@ export const loginPost = async (req: Request, res: Response): Promise<void> => {
     res.redirect("back");
   }
 }
+
+// [GET] /auth/logout
+export const logout = async (req: Request, res: Response): Promise<void> => {
+  res.clearCookie("tokenUser");
+  res.redirect("/");
+}
