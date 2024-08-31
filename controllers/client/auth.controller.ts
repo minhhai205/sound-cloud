@@ -26,6 +26,9 @@ export const registerPost = async (req: Request, res: Response): Promise<void> =
     else{
       req.body.password = md5(req.body.password);
       req.body.tokenUser = generateHelper.generateRandomString(30);
+      req.body.avatar = "/images/avatar.png";
+
+      console.log(req.body)
 
       const user = new User(req.body);
       await user.save();

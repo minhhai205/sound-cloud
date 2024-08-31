@@ -38,10 +38,23 @@ header.header
               )
                 i(class="fa fa-search") 
       
-      .col-3
-        .inner-menu
-          ul
-            li
-              a.btn.btn-success.btn-sm(href="/auth/login") Sign in
-            li
-              a.btn.btn-info.btn-sm(href="/auth/register") Create Account
+      if(user)
+        .col-2
+          .inner-menu
+            ul
+              li
+                a( href=`you/profile`) 
+                  img(  
+                    src=user.avatar alt="Avt" class="avatar rounded-circle mr-2"
+                  ) 
+              li
+                a.btn.btn-success.btn-sm(href="/auth/logout") Sign out
+        
+      else  
+        .col-3
+          .inner-menu
+            ul
+              li
+                a.btn.btn-success.btn-sm(href="/auth/login") Sign in
+              li
+                a.btn.btn-info.btn-sm(href="/auth/register") Create Account

@@ -5,7 +5,7 @@ export const userInfo = async (req: Request, res: Response, next: NextFunction) 
   
   if(req.cookies.tokenUser){
     const user = await User.findOne({
-      token: req.cookies.tokenUser,
+      tokenUser: req.cookies.tokenUser,
       deleted: false,
       status: "active",
     });

@@ -447,3 +447,10 @@ li.d-flex.justify-content-between.align-items-center.border-bottom.px-3.py-2 {
   cursor: pointer;
 }
 /* End Show Alert */
+
+.avatar {
+  width: 29px;
+  height: 29px;
+  border-radius: 50%;
+  object-fit: cover; 
+}
