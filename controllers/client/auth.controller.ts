@@ -19,8 +19,8 @@ export const registerPost = async (req: Request, res: Response): Promise<void> =
     });
 
     if(exitsUser){
-      // add Notification...
-      res.send("email already exists");
+      req.flash("error", "Email already exists!");
+      res.redirect("back");
     }
 
     else{
@@ -35,8 +35,8 @@ export const registerPost = async (req: Request, res: Response): Promise<void> =
       res.redirect("/");
     }
   } catch (error) {
-    // add Notification...
-    res.send("Registration failed");
+    req.flash("error", "Registration failed!");
+    res.redirect("back");
   }
 }
 
@@ -47,7 +47,7 @@ export const login = async (req: Request, res: Response): Promise<void> => {
   });
 }
 
-// [GET] /auth/login
+// [POST] /auth/login
 export const loginPost = async (req: Request, res: Response): Promise<void> => {
   try {
     const email = req.body.email;
@@ -59,20 +59,19 @@ export const loginPost = async (req: Request, res: Response): Promise<void> => {
     });
 
     if(!user){
-      // add Notification...
-      console.log("email does not exist!");
+      req.flash("error", "Email does not exist!");
       res.redirect("back");
       return;
     }
 
     if(md5(password) != user.password) {
-      // add Notification...
+      req.flash("error", "Wrong password!");
       res.redirect("back");
       return;
     }
   
     if(user.status != "active") {
-      // add Notification...
+      req.flash("error", "Account has been locked!");
       res.redirect("back");
       return;
     }
@@ -82,6 +81,7 @@ export const loginPost = async (req: Request, res: Response): Promise<void> => {
     res.redirect("/");
 
   } catch (error) {
+    req.flash("error", "Login failed!");
     res.redirect("back");
   }
 }

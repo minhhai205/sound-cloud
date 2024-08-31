@@ -66,3 +66,19 @@ if(searchOption){
   });
 }
 // End Option Search
+
+// Alert
+const showAlert = document.querySelector("[show-alert]");
+if(showAlert){
+  const time = parseInt(showAlert.getAttribute(["data-time"]));
+  const buttonClose = showAlert.querySelector("[close-alert]");
+  
+  setTimeout(() => {
+    showAlert.classList.add("alert-hidden");
+  }, time);
+
+  buttonClose.addEventListener("click", () => {
+    showAlert.classList.add("alert-hidden");
+  });
+}
+// End Alert
