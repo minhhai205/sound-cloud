@@ -30,7 +30,7 @@ export const registerPost = async (req: Request, res: Response): Promise<void> =
       const user = new User(req.body);
       await user.save();
 
-      res.cookie("tokenUser", user.tokenUser);
+      res.cookie("tokenUser", user.tokenUser, {expires: new Date(Date.now() + 1000 * 60 * 60 * 24 * 100)});
 
       res.redirect("/");
     }
@@ -76,7 +76,7 @@ export const loginPost = async (req: Request, res: Response): Promise<void> => {
       return;
     }
   
-    res.cookie("tokenUser", user.tokenUser);
+    res.cookie("tokenUser", user.tokenUser, {expires: new Date(Date.now() + 1000 * 60 * 60 * 24 * 100)});
   
     res.redirect("/");
 
